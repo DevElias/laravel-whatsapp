@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\whatsappController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/formulario', function () {
+    return view('whatsapp');
+});
+
+Route::get('/whatsapp', [whatsappController::class, 'sendMessage']);
+
